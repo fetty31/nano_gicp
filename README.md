@@ -30,10 +30,10 @@
     ```
   3. Use in the source file of your wanted package as:
     ```cpp
-    #include <nano_gicp/point_type_nano_gicp.hpp> //change PointType in this headerfile, currently pcl::PointXYZI
+    #include <nano_gicp/point_type_nano_gicp.hpp> //change PointTypeNano in this headerfile, currently pcl::PointXYZI
     #include <nano_gicp/nano_gicp.hpp>
     
-    nano_gicp::NanoGICP<PointType, PointType> m_nano_gicp;
+    nano_gicp::NanoGICP<PointTypeNano, PointTypeNano> m_nano_gicp;
     
     ////// nano_gicp init
     m_nano_gicp.setMaxCorrespondenceDistance(max_corres_dist_);
@@ -48,7 +48,7 @@
     ////// use
     pcl::PointCloud<pcl::PointXYZI>::Ptr src_(new pcl::PointCloud<pcl::PointXYZI>);
     pcl::PointCloud<pcl::PointXYZI>::Ptr dst_(new pcl::PointCloud<pcl::PointXYZI>);
-    pcl::PointCloud<PointType> dummy_;
+    pcl::PointCloud<PointTypeNano> dummy_;
     /* watch out! */
     *src_ = src_data; //put your data here
     *dst_ = dst_data; //put your data here
